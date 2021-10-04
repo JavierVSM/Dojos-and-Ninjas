@@ -1,0 +1,47 @@
+#-- Query: Create 3 new dojos --#
+
+INSERT INTO dojos(id, name, created_at, updated_at)
+VALUES  ( 001, 'Dojo Red', 10/04/2021, 10/04/2021),
+        ( 002, 'Dojo Blue', 10/04/2021, 10/04/2021),
+        ( 003, 'Dojo Yellow', 10/04/2021, 10/04/2021);
+
+#--  Query: Delete the 3 dojos you just created  --#
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos
+
+#--  Query: Create 3 more dojos --#
+
+INSERT INTO dojos(id, name, created_at, updated_at)
+VALUES  ( 004, 'Dojo Black', 10/04/2021, 10/04/2021),
+        ( 005, 'Dojo Green', 10/04/2021, 10/04/2021),
+        ( 006, 'Dojo Orange', 10/04/2021, 10/04/2021);
+
+#--  Query: Create 3 ninjas that belong to the first dojo --#
+
+INSERT INTO ninjas(ninja_id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES  ( 101, 'Carlos', 'Cerdas', 32, 10/04/2021, 10/04/2021, 004),
+        ( 102, 'Beto', 'Mora', 33, 10/04/2021, 10/04/2021, 004),
+        ( 103, 'Laura', 'Coto', 30, 10/04/2021, 10/04/2021, 004);
+
+#-- Query: Create 3 ninjas that belong to the second dojo --#
+INSERT INTO ninjas(ninja_id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES  ( 104, 'Luis', 'Sandoval', 31, 10/04/2021, 10/04/2021, 005),
+        ( 105, 'Ale', 'Mena', 30, 10/04/2021, 10/04/2021, 005),
+        ( 106, 'Miguel', 'Cruz', 32, 10/04/2021, 10/04/2021, 005);
+
+#--  Query: Create 3 ninjas that belong to the third dojo --#
+INSERT INTO ninjas(ninja_id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES  ( 107, 'Javier', 'Cordero', 34, 10/04/2021, 10/04/2021, 006),
+        ( 108, 'Pamela', 'Mendez', 32, 10/04/2021, 10/04/2021, 006),
+        ( 109, 'Rita', 'Lobo', 31, 10/04/2021, 10/04/2021, 006);
+
+#--  Query: Retrieve all the ninjas from the first dojo --#
+SELECT * FROM ninjas where dojo_id = 4;
+
+#--  Query: Retrieve all the ninjas from the last dojo --#
+SELECT * FROM ninjas where dojo_id = 6;
+
+#--  Query: Retrieve the last ninja's dojo --# 
+SELECT * FROM dojos where id = 006; 
+
